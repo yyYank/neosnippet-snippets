@@ -125,3 +125,15 @@ options     head
     }
   }
 
+snippet     map
+abbr        map[K]V{}
+options     head
+  m := map[${1:key type}]${2: value type}{}
+
+snippet     stou
+abbr        string -> uint64
+options     head
+  ${1:variablename}, err := strconv.ParseUint(${2:target}, 10, 64)
+  if err != nil {
+      return err
+  }
